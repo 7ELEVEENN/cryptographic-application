@@ -27,13 +27,13 @@ if option == "Text":
 
         # Display brief information about hash functions
         if hash_md5:
-            st.info("MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash function.")
+            st.info("MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash function that produces a 32-character hexadecimal hash value.")
         if hash_sha1:
-            st.info("SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function.")
+            st.info("SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that produces a 40-character hexadecimal hash value.")
         if hash_sha256:
-            st.info("SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function.")
+            st.info("SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that produces a 64-character hexadecimal hash value.")
         if hash_sha512:
-            st.info("SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function.")
+            st.info("SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function that produces a 128-character hexadecimal hash value.")
 
         hash_functions = {}
         if hash_md5:
@@ -71,11 +71,11 @@ elif option == "File":
         if hash_md5:
             st.info("MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash function that produces a 32-character hexadecimal hash value.")
         if hash_sha1:
-            st.info("SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that produces a 40-character hexadecimal hash value..")
+            st.info("SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that produces a 40-character hexadecimal hash value.")
         if hash_sha256:
-            st.info("SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that produces a 64-character hexadecimal hash value..")
+            st.info("SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that produces a 64-character hexadecimal hash value.")
         if hash_sha512:
-            st.info("SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function that produces a 128-character hexadecimal hash value..")
+            st.info("SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function that produces a 128-character hexadecimal hash value.")
 
         hash_functions = {}
         if hash_md5:
