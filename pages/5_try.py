@@ -15,9 +15,10 @@ def xor_decrypt(ciphertext, key):
     return xor_encrypt(ciphertext, key)  # XOR decryption is the same as encryption
 
 def display_binary_representation(data, label):
-    """Displays the binary representation of data along with characters."""
+    """Displays the binary representation of data along with characters and XOR results."""
     st.write(f"{label}:", data)
     if label == "Plaintext" or label == "Ciphertext":
+        key_bytes = bytes(st.text_input("Enter Key:").encode())
         col1, col2, col3 = st.columns(3)
         with col1:
             st.write("Plaintext byte")
@@ -25,16 +26,19 @@ def display_binary_representation(data, label):
                 st.write(format(byte, '08b'))
         with col2:
             st.write("Key byte")
-            for byte in data:
+            for byte in key_bytes:
                 st.write(format(byte, '08b'))
         with col3:
             st.write("XOR result")
-            for byte in data:
-                xor_result = byte ^ byte  # Perform XOR with itself for demonstration
+            for i in range(len(data)):
+                plaintext_byte = data[i]
+                key_byte = key_bytes[i % len(key_bytes)]
+                xor_result = plaintext_byte ^ key_byte
                 st.write(format(xor_result, '08b'))
     else:
         for byte in data:
             st.write(f"Key byte: {format(byte, '08b')} | Plaintext byte: {chr(byte)}")
+
 
 st.title("XOR Cipher")
 
