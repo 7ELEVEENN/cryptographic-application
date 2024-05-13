@@ -61,7 +61,7 @@ elif option == "File":
             hash_functions.append("sha512")
 
         if hash_functions:
-            st.write("Hash values:")
+            st.subheader("\nHash values:")
             for hash_type in hash_functions:
                 hashed_file = calculate_hash(file_contents, hash_type)
                 st.write(f"{hash_type.upper()} Hash:", hashed_file)
