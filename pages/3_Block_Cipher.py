@@ -42,7 +42,7 @@ if input_method == "Text":
             # Display encryption results on the left
             col1, col2 = st.columns(2)
             with col1:
-                st.subheader("Encryption Results:")
+                st.subheader("Encryption Results:\n")
                 display_binary_representation(plaintext_bytes, "Plaintext")
                 display_binary_representation(key_bytes, "Key")
                 st.success("Encrypted Ciphertext:")
