@@ -41,13 +41,14 @@ if input_method == "Text":
             st.subheader("Encryption Results:")
             display_binary_representation(plaintext_bytes, "Plaintext")
             display_binary_representation(key_bytes, "Key")
-            st.info("Encrypted Ciphertext:", encrypted_text.decode())
-    
+            st.success("Encrypted Ciphertext:")
+            st.success(encrypted_text.decode())
+
             st.subheader("Decryption Results:")
             display_binary_representation(encrypted_text, "Ciphertext")
             display_binary_representation(key_bytes, "Key")
-            st.info("Decrypted Plaintext:", decrypted_text.decode())
-
+            st.success("Decrypted Plaintext:")
+            st.success(decrypted_text.decode())
 
 elif input_method == "File":
     file = st.file_uploader("Upload a file:")
