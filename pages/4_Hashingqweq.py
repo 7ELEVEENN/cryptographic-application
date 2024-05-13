@@ -20,6 +20,10 @@ if option == "Text":
         st.write("You entered:", text)
 
         st.subheader("Choose hash functions:")
+        st.markdown("""<div style="background-color:#222831;padding:10px;border-radius:10px">
+    <p style="text-align: justify; color: white;">
+SHA-512 is part of the SHA-2 family and produces a 512-bit hash value. It offers even greater collision resistance than SHA-256. SHA-512 is used in various security protocols, ensuring data integrity and authenticity. It’s commonly employed in TLS, SSL, and other cryptographic applications.</p>
+    </div>""")
         hash_md5 = st.checkbox("MD5")
         hash_sha1 = st.checkbox("SHA1")
         hash_sha256 = st.checkbox("SHA256")
