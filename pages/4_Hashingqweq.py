@@ -16,25 +16,19 @@ if option == "Text":
         st.write("You entered:", text)
 
         st.subheader("Choose hash functions:")
-        hash_md5, hash_sha1, hash_sha256, hash_sha512 = st.beta_columns(4)
-        
-        with hash_md5:
-            md5 = st.checkbox("MD5")
-        with hash_sha1:
-            sha1 = st.checkbox("SHA1")
-        with hash_sha256:
-            sha256 = st.checkbox("SHA256")
-        with hash_sha512:
-            sha512 = st.checkbox("SHA512")
+        hash_md5 = st.checkbox("MD5")
+        hash_sha1 = st.checkbox("SHA1")
+        hash_sha256 = st.checkbox("SHA256")
+        hash_sha512 = st.checkbox("SHA512")
 
         hash_functions = []
-        if md5:
+        if hash_md5:
             hash_functions.append("md5")
-        if sha1:
+        if hash_sha1:
             hash_functions.append("sha1")
-        if sha256:
+        if hash_sha256:
             hash_functions.append("sha256")
-        if sha512:
+        if hash_sha512:
             hash_functions.append("sha512")
 
         if hash_functions:
@@ -51,25 +45,19 @@ elif option == "File":
         st.write(f"You uploaded '{file.name}' ({len(file_contents)} bytes)")
 
         st.subheader("Choose hash functions:")
-        hash_md5, hash_sha1, hash_sha256, hash_sha512 = st.beta_columns(4)
-        
-        with hash_md5:
-            md5 = st.checkbox("MD5")
-        with hash_sha1:
-            sha1 = st.checkbox("SHA1")
-        with hash_sha256:
-            sha256 = st.checkbox("SHA256")
-        with hash_sha512:
-            sha512 = st.checkbox("SHA512")
+        hash_md5 = st.checkbox("MD5")
+        hash_sha1 = st.checkbox("SHA1")
+        hash_sha256 = st.checkbox("SHA256")
+        hash_sha512 = st.checkbox("SHA512")
 
         hash_functions = []
-        if md5:
+        if hash_md5:
             hash_functions.append("md5")
-        if sha1:
+        if hash_sha1:
             hash_functions.append("sha1")
-        if sha256:
+        if hash_sha256:
             hash_functions.append("sha256")
-        if sha512:
+        if hash_sha512:
             hash_functions.append("sha512")
 
         if hash_functions:
