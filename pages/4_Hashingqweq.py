@@ -68,7 +68,7 @@ elif option == "File":
             hash_functions["sha512"] = "SHA512"
 
         if hash_functions:
-            st.write("Hash values:")
+            st.write("\nHash values:")
             hash_results = {}
             for hash_type, label in hash_functions.items():
                 hashed_file = calculate_hash(file_contents, hash_type)
