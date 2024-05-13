@@ -18,7 +18,8 @@ def display_binary_representation(data, label):
     """Displays the binary representation of data along with characters."""
     st.write(f"{label}:", data)
     for byte in data:
-        st.write(f"Binary: {format(byte, '08b')} | Character: {chr(byte)}")
+        st.write(f"Key byte: {format(byte, '08b')} | Plaintext byte: {chr(byte)}")
+        
 
 st.title("XOR Cipher")
 
