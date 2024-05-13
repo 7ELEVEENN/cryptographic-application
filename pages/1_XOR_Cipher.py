@@ -32,6 +32,8 @@ if input_method == "Text":
     if st.button("Encrypt/Decrypt"):
         if not plaintext or not key:
             st.write("Plaintext or key should not be empty.")
+        elif len(plaintext) < len(key):
+            st.write("Plaintext length should be equal or greater than the length of key")
         else:
             plaintext_bytes = bytes(plaintext.encode())
             key_bytes = bytes(key.encode())
@@ -90,3 +92,4 @@ elif input_method == "File":
                     file_name="decrypted_file.txt",
                     mime="text/plain"
                 )
+
