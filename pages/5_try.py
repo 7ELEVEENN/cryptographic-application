@@ -16,16 +16,25 @@ def xor_decrypt(ciphertext, key):
 
 def display_binary_representation(data, label):
     """Displays the binary representation of data along with characters."""
-    st.write(f"{label}:")
-    for i, byte in enumerate(data):
-        if label == "Plaintext" or label == "Ciphertext":
-            st.write(f"Plaintext byte: {format(byte, '08b')} = {chr(byte)}")
-        elif label == "Key":
-            st.write(f"Key byte.........: {format(byte, '08b')} = {chr(byte)}")
-        else:
-            st.write(f"XOR result......: {format(byte, '08b')} = {chr(byte)}")
-        if i < len(data) - 1:
-            st.write("")
+    st.write(f"{label}:", data)
+    if label == "Plaintext" or label == "Ciphertext":
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.write("Plaintext byte")
+            for byte in data:
+                st.write(format(byte, '08b'))
+        with col2:
+            st.write("Key byte")
+            for byte in data:
+                st.write(format(byte, '08b'))
+        with col3:
+            st.write("XOR result")
+            for byte in data:
+                xor_result = byte ^ byte  # Perform XOR with itself for demonstration
+                st.write(format(xor_result, '08b'))
+    else:
+        for byte in data:
+            st.write(f"Key byte: {format(byte, '08b')} | Plaintext byte: {chr(byte)}")
 
 st.title("XOR Cipher")
 
@@ -45,18 +54,13 @@ if input_method == "Text":
             encrypted_text = xor_encrypt(plaintext_bytes, key_bytes)
             decrypted_text = xor_decrypt(encrypted_text, key_bytes)
             
-            # Display encryption and decryption results
             st.subheader("Encryption Results:")
             display_binary_representation(plaintext_bytes, "Plaintext")
-            display_binary_representation(key_bytes, "Key")
-            display_binary_representation(encrypted_text, "XOR result")
             st.success("Encrypted Ciphertext:")
             st.success(encrypted_text.decode())
-
+            
             st.subheader("Decryption Results:")
             display_binary_representation(encrypted_text, "Ciphertext")
-            display_binary_representation(key_bytes, "Key")
-            display_binary_representation(decrypted_text, "XOR result")
             st.success("Decrypted Plaintext:")
             st.success(decrypted_text.decode())
 
@@ -74,7 +78,6 @@ elif input_method == "File":
             encrypted_file = xor_encrypt(file_contents, key_bytes)
             decrypted_file = xor_decrypt(encrypted_file, key_bytes)
             
-            # Display encryption and decryption results
             st.subheader("Encryption Results:")
             st.write("Encrypted File Size:", len(encrypted_file), "bytes")
             st.info("File has been encrypted successfully.")
