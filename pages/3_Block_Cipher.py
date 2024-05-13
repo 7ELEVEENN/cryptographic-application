@@ -43,12 +43,14 @@ if input_method == "Text":
             display_binary_representation(key_bytes, "Key")
             st.write("Encrypted Ciphertext:")
             st.write(encrypted_text.decode())
-            
+            st.info("Ciphertext has been encrypted successfully.")
+
             st.subheader("Decryption Results:")
             display_binary_representation(encrypted_text, "Ciphertext")
             display_binary_representation(key_bytes, "Key")
             st.write("Decrypted Plaintext:")
             st.write(decrypted_text.decode())
+            st.info("Plaintext has been decrypted successfully.")
 
 elif input_method == "File":
     file = st.file_uploader("Upload a file:")
@@ -66,9 +68,11 @@ elif input_method == "File":
             
             st.subheader("Encryption Results:")
             st.write("Encrypted File Size:", len(encrypted_file), "bytes")
+            st.info("File has been encrypted successfully.")
             
             st.subheader("Decryption Results:")
             st.write("Decrypted File Size:", len(decrypted_file), "bytes")
+            st.info("File has been decrypted successfully.")
 
             # Download decrypted file as a text file
             st.download_button(
