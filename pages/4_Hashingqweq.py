@@ -20,14 +20,20 @@ if option == "Text":
         st.write("You entered:", text)
 
         st.subheader("Choose hash functions:")
-        st.markdown("SHA-512": """<div style="background-color:#222831;padding:10px;border-radius:10px">
-    <p style="text-align: justify; color: white;">
-SHA-512 is part of the SHA-2 family and produces a 512-bit hash value. It offers even greater collision resistance than SHA-256. SHA-512 is used in various security protocols, ensuring data integrity and authenticity. It’s commonly employed in TLS, SSL, and other cryptographic applications.</p>
-    </div>""")
         hash_md5 = st.checkbox("MD5")
         hash_sha1 = st.checkbox("SHA1")
         hash_sha256 = st.checkbox("SHA256")
         hash_sha512 = st.checkbox("SHA512")
+
+        # Display brief information about hash functions
+        if hash_md5:
+            st.info("MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash function.")
+        if hash_sha1:
+            st.info("SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function.")
+        if hash_sha256:
+            st.info("SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function.")
+        if hash_sha512:
+            st.info("SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function.")
 
         hash_functions = {}
         if hash_md5:
@@ -40,7 +46,7 @@ SHA-512 is part of the SHA-2 family and produces a 512-bit hash value. It offers
             hash_functions["sha512"] = "SHA512"
 
         if hash_functions:
-            st.write("Hash values:")
+            st.markdown("## Hash values:")  # Larger font size using Markdown syntax
             hash_results = {}
             for hash_type, label in hash_functions.items():
                 hashed_text = calculate_hash(text.encode(), hash_type)
@@ -61,6 +67,16 @@ elif option == "File":
         hash_sha256 = st.checkbox("SHA256")
         hash_sha512 = st.checkbox("SHA512")
 
+        # Display brief information about hash functions
+        if hash_md5:
+            st.info("MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash function.")
+        if hash_sha1:
+            st.info("SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function.")
+        if hash_sha256:
+            st.info("SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function.")
+        if hash_sha512:
+            st.info("SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function.")
+
         hash_functions = {}
         if hash_md5:
             hash_functions["md5"] = "MD5"
@@ -72,7 +88,7 @@ elif option == "File":
             hash_functions["sha512"] = "SHA512"
 
         if hash_functions:
-            st.write("\nHash values:")
+            st.markdown("## Hash values:")  # Larger font size using Markdown syntax
             hash_results = {}
             for hash_type, label in hash_functions.items():
                 hashed_file = calculate_hash(file_contents, hash_type)
