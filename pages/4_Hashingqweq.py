@@ -15,24 +15,27 @@ if option == "Text":
     if text:
         st.write("You entered:", text)
 
-        st.subheader("Choose a hash function:")
+        st.subheader("Choose hash functions:")
         hash_md5 = st.checkbox("MD5")
         hash_sha1 = st.checkbox("SHA1")
         hash_sha256 = st.checkbox("SHA256")
         hash_sha512 = st.checkbox("SHA512")
 
+        hash_functions = []
         if hash_md5:
-            hashed_text = calculate_hash(text.encode(), "md5")
-            st.write("MD5 Hash:", hashed_text)
+            hash_functions.append("md5")
         if hash_sha1:
-            hashed_text = calculate_hash(text.encode(), "sha1")
-            st.write("SHA1 Hash:", hashed_text)
+            hash_functions.append("sha1")
         if hash_sha256:
-            hashed_text = calculate_hash(text.encode(), "sha256")
-            st.write("SHA256 Hash:", hashed_text)
+            hash_functions.append("sha256")
         if hash_sha512:
-            hashed_text = calculate_hash(text.encode(), "sha512")
-            st.write("SHA512 Hash:", hashed_text)
+            hash_functions.append("sha512")
+
+        if hash_functions:
+            st.write("Hash values:")
+            for hash_type in hash_functions:
+                hashed_text = calculate_hash(text.encode(), hash_type)
+                st.write(f"{hash_type.upper()} Hash:", hashed_text)
 
 elif option == "File":
     file = st.file_uploader("Upload a file to hash:", type=["txt", "pdf", "docx", "csv", "xlsx"])
@@ -41,21 +44,24 @@ elif option == "File":
 
         st.write(f"You uploaded '{file.name}' ({len(file_contents)} bytes)")
 
-        st.subheader("Choose a hash function:")
+        st.subheader("Choose hash functions:")
         hash_md5 = st.checkbox("MD5")
         hash_sha1 = st.checkbox("SHA1")
         hash_sha256 = st.checkbox("SHA256")
         hash_sha512 = st.checkbox("SHA512")
 
+        hash_functions = []
         if hash_md5:
-            hashed_file = calculate_hash(file_contents, "md5")
-            st.write("MD5 Hash:", hashed_file)
+            hash_functions.append("md5")
         if hash_sha1:
-            hashed_file = calculate_hash(file_contents, "sha1")
-            st.write("SHA1 Hash:", hashed_file)
+            hash_functions.append("sha1")
         if hash_sha256:
-            hashed_file = calculate_hash(file_contents, "sha256")
-            st.write("SHA256 Hash:", hashed_file)
+            hash_functions.append("sha256")
         if hash_sha512:
-            hashed_file = calculate_hash(file_contents, "sha512")
-            st.write("SHA512 Hash:", hashed_file)
+            hash_functions.append("sha512")
+
+        if hash_functions:
+            st.write("Hash values:")
+            for hash_type in hash_functions:
+                hashed_file = calculate_hash(file_contents, hash_type)
+                st.write(f"{hash_type.upper()} Hash:", hashed_file)
