@@ -25,6 +25,7 @@ def run():
     )
 
     st.write("# CRYPTOGRAPHIC APPLICATION 🔐")
+    st.write("_"*20)
 
     st.sidebar.success("Select a cipher.")
 
