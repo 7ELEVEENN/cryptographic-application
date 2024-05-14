@@ -24,7 +24,7 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# CRYPTOGRAPHIC APPLICATION 🔒🔑🔓")
+    st.write("# CRYPTOGRAPHIC APPLICATION 🔐")
 
     st.sidebar.success("Select a cipher.")
 
