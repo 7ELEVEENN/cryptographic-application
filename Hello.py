@@ -31,8 +31,8 @@ def run():
 
     st.markdown(
         """
-        This application uses symmetric and asymmetric cryptographic algorithms for facilitating encryption and decryption across plaintext & files.
-        It also has features for generating digital fingerprints for both text and files using different hashing functions.
+        ##This application uses symmetric and asymmetric cryptographic algorithms for facilitating encryption and decryption across plaintext & files.
+        It also has features for generating digital fingerprints for both text and files using different hashing functions.##
 
         ### GROUP 1
         - Ken Horlador
