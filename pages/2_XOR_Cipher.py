@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(
+        page_title="Crypto",
+        page_icon="🔐",
+        layout= "wide",
+    )
+
 def xor_encrypt(plaintext, key):
     """Encrypts plaintext using XOR cipher with the given key."""
     ciphertext = bytearray()
