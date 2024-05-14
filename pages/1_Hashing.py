@@ -22,11 +22,11 @@ def hash_info(hash_type):
         return "SHA-512 (Secure Hash Algorithm 512-bit) is a cryptographic hash function with a hash length of 64 bytes that produces a 128-character hexadecimal hash value."
 
 st.title("Hashing Functions")
-st.markdown("""<div style="background-color:#222831;padding:20px;border-radius:5px">
+st.markdown("""<div style="background-color:#222831;padding:15px;border-radius:1px">
     <p style="text-align: justify; color: white;">Hashing functions are one-way mathematical functions that convert data into a unique, fixed-length string of characters. It helps in storing passwords securely in a database, it also ensures data integrity by indicating when data has been altered, as well as it organizes content and files in a way that increases efficiency.</p>
     </div>""", unsafe_allow_html=True)
 
-option = st.radio("\n\nChoose input method:", ("Text", "File"))
+option = st.radio("Choose input method:", ("Text", "File"))
 
 if option == "Text":
     text = st.text_input("Enter text to hash:")
