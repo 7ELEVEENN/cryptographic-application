@@ -24,16 +24,15 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+    st.write("# CRYPTOGRAPHIC APPLICATION 👋")
 
-    st.sidebar.success("Select a demo above.")
+    st.sidebar.success("Select a cipher.")
 
     st.markdown(
         """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
+        This application uses symmetric and asymmetric cryptographic algorithms for both plaintext & files encryption and decryption.
+        It also has features for generating digital fingerprints for text and files using different hashing functions.
+
         ### Want to learn more?
         - Check out [streamlit.io](https://streamlit.io)
         - Jump into our [documentation](https://docs.streamlit.io)
